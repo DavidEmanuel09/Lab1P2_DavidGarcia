@@ -17,20 +17,24 @@ public class Lab1P2_DavidGarcia {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        //fila 3, silla 5
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         System.out.println("ingrese tamaño de la matriz: ");
         int num = scanner.nextInt();
+        //se encierra al usuario hasta que cumpla con los parametros
             while(num % 2 == 0 || num <= 4){
                 System.out.println("el numero debe ser impar y mayor a 4: "); 
                 num = scanner.nextInt();
         }
+            //se llena la matriz con numeros random del 0 al 9
          int[][] matriz = new int[num][num];   
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[0].length; j++) {
                     matriz[i][j] = random.nextInt(10);
                 }
         }
+            //se imprime la matriz
             System.out.println("Matriz Generada: ");
             for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[0].length; j++) {
@@ -38,6 +42,25 @@ public class Lab1P2_DavidGarcia {
                 }
                 System.out.println("");
         }
+            
+            int variable_cambio = 0;
+            for (int i = 0; i < matriz.length-1; i++) {
+                for (int j = 0; j < matriz.length-1; j++) {
+                    if (matriz[i][j] > matriz[i+1][j]) {
+                        variable_cambio = matriz[i][j];
+                        matriz[i][j] = matriz[i+1][j];
+                        matriz[i+1][j] = variable_cambio; 
+                    }
+                }
+        }
+            System.out.println("");
+             for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[0].length; j++) {
+                    System.out.print("["+matriz[i][j]+"]");
+                }
+                System.out.println("");
+        }
+            
             
     }
     

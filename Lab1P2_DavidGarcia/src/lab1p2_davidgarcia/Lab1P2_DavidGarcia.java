@@ -76,12 +76,13 @@ public class Lab1P2_DavidGarcia {
                   }
               }
         }
-          System.out.println("");
+         
           for (int i = 0; i < medianas.size(); i++) {
                 System.out.print("["+medianas.get(i)+"]");
           }
+          System.out.println("");
            int num_media = medianas.size()/2;
-           System.out.println("mediana de las medianas: ");
+           System.out.println("mediana de las medianas: "+medianas.get(num_media));
     }
     public static void ordenarRecursivo(int[][] matriz,int i, int j, int k){
         if ( i < matriz.length) {

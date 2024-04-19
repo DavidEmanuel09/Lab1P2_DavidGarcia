@@ -64,6 +64,7 @@ public class Lab1P2_DavidGarcia {
             for (int i = 0; i < medianas.size(); i++) {
                 System.out.print("["+medianas.get(i)+"]");
         }
+            //este codigo imprime el arreglo de medianas ya ordenado
           System.out.println("");
           System.out.println("arreglo de medianas ordenado: ");
           for (int i = 0; i < medianas.size()-1; i++) {

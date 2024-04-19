@@ -54,12 +54,17 @@ public class Lab1P2_DavidGarcia {
                 }
                 System.out.println("");
         }
+            //este codigo imprime el arreglo de las medianas de cada fila
             System.out.println("");
             System.out.println("Arreglo de medianas: ");
             for (int i = 0; i < matriz.length; i++) {
             int medio = matriz[i][matriz[i].length/2];
                     medianas.add(medio);
         }
+            for (int i = 0; i < medianas.size(); i++) {
+                System.out.print("["+medianas.get(i)+"]");
+        }
+            
             
     }
     public static void ordenarRecursivo(int[][] matriz,int i, int j, int k){

@@ -42,29 +42,38 @@ public class Lab1P2_DavidGarcia {
                 }
                 System.out.println("");
         }
-            //ordenar cada elemento de la matriz
-            for (int i = 0; i < matriz.length; i++) {
-                for (int j = 0; j < matriz[i].length-1; j++) {
-                    for (int k = 0; k < matriz[i].length - j -1; k++) {
-                        if (matriz[i][k] > matriz[i][k +1]) {
-                            int valor_reserva = matriz[i][k];
-                            matriz[i][k] = matriz[i][k+1];
-                            matriz[i][k + 1] = valor_reserva;
-                        }
-                    }
-                }
-        }
             System.out.println("");
-             for (int i = 0; i < matriz.length; i++) {
+            //ordenar cada elemento de la matriz
+            ordenarRecursivo(matriz,0,0,0);
+            System.out.println("matriz ordenada: ");
+            for (int i = 0; i < matriz.length; i++) {
                 for (int j = 0; j < matriz[0].length; j++) {
                     System.out.print("["+matriz[i][j]+"]");
                 }
                 System.out.println("");
         }
             
-            
-            
-            
+    }
+    public static void ordenarRecursivo(int[][] matriz,int i, int j, int k){
+        if ( i < matriz.length) {
+            if (j < matriz[i].length-1) {
+                if (k < matriz.length - j -1) {
+                     if (matriz[i][k] > matriz[i][k +1]) {
+                            int valor_reserva = matriz[i][k];
+                            matriz[i][k] = matriz[i][k+1];
+                            matriz[i][k + 1] = valor_reserva;
+                        }
+                     ordenarRecursivo(matriz,i,j,k+1);
+                  k++;  
+                }else{
+                    ordenarRecursivo(matriz,i,j+1,0);
+                }
+                j++;
+            }else{
+                ordenarRecursivo(matriz,i+1,0,0);
+            }
+            i++;
+        }
     }
     
 }

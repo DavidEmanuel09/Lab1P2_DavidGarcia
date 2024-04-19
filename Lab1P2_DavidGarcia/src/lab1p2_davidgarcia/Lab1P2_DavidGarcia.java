@@ -64,7 +64,22 @@ public class Lab1P2_DavidGarcia {
             for (int i = 0; i < medianas.size(); i++) {
                 System.out.print("["+medianas.get(i)+"]");
         }
-            
+          System.out.println("");
+          System.out.println("arreglo de medianas ordenado: ");
+          for (int i = 0; i < medianas.size()-1; i++) {
+              for (int j = 0; j < medianas.size()-1-i; j++) {
+                  if (medianas.get(j)>medianas.get(j+1)) {
+                      int media = medianas.get(j);
+                      medianas.set(j, medianas.get(j+1));
+                      medianas.set(j+1,media);
+                      
+                  }
+              }
+        }
+          System.out.println("");
+          for (int i = 0; i < medianas.size(); i++) {
+                System.out.print("["+medianas.get(i)+"]");
+          }
             
     }
     public static void ordenarRecursivo(int[][] matriz,int i, int j, int k){

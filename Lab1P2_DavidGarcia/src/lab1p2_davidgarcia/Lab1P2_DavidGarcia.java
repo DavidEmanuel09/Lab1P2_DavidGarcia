@@ -4,6 +4,7 @@
  */
 package lab1p2_davidgarcia;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -20,6 +21,7 @@ public class Lab1P2_DavidGarcia {
         //fila 3, silla 5
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
+        ArrayList<Integer> medianas = new ArrayList();
         System.out.println("ingrese tamaño de la matriz: ");
         int num = scanner.nextInt();
         //se encierra al usuario hasta que cumpla con los parametros
@@ -52,6 +54,12 @@ public class Lab1P2_DavidGarcia {
                 }
                 System.out.println("");
         }
+            System.out.println("");
+            System.out.println("Arreglo de medianas: ");
+            for (int i = 0; i < matriz.length; i++) {
+            int medio = matriz[i][matriz[i].length/2];
+                    medianas.add(medio);
+        }
             
     }
     public static void ordenarRecursivo(int[][] matriz,int i, int j, int k){
@@ -75,5 +83,6 @@ public class Lab1P2_DavidGarcia {
             i++;
         }
     }
+    
     
 }

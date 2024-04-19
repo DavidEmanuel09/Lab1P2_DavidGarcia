@@ -80,7 +80,8 @@ public class Lab1P2_DavidGarcia {
           for (int i = 0; i < medianas.size(); i++) {
                 System.out.print("["+medianas.get(i)+"]");
           }
-            
+           int num_media = medianas.size()/2;
+           System.out.println("mediana de las medianas: ");
     }
     public static void ordenarRecursivo(int[][] matriz,int i, int j, int k){
         if ( i < matriz.length) {

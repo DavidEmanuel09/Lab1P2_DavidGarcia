@@ -42,14 +42,15 @@ public class Lab1P2_DavidGarcia {
                 }
                 System.out.println("");
         }
-            
-            int variable_cambio = 0;
-            for (int i = 0; i < matriz.length-1; i++) {
-                for (int j = 0; j < matriz.length-1; j++) {
-                    if (matriz[i][j] > matriz[i+1][j]) {
-                        variable_cambio = matriz[i][j];
-                        matriz[i][j] = matriz[i+1][j];
-                        matriz[i+1][j] = variable_cambio; 
+            //ordenar cada elemento de la matriz
+            for (int i = 0; i < matriz.length; i++) {
+                for (int j = 0; j < matriz[i].length-1; j++) {
+                    for (int k = 0; k < matriz[i].length - j -1; k++) {
+                        if (matriz[i][k] > matriz[i][k +1]) {
+                            int valor_reserva = matriz[i][k];
+                            matriz[i][k] = matriz[i][k+1];
+                            matriz[i][k + 1] = valor_reserva;
+                        }
                     }
                 }
         }
@@ -60,6 +61,8 @@ public class Lab1P2_DavidGarcia {
                 }
                 System.out.println("");
         }
+            
+            
             
             
     }
